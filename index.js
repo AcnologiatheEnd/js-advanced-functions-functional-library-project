@@ -121,6 +121,7 @@ const fi = (function() {
       if (!Array.isArray(array)) {
         return copy.push(array)
       }
+      
       if (noNested) {
         for (let element of array)
           if (Array.isArray(element)) {
@@ -135,6 +136,7 @@ const fi = (function() {
           this.flatten(element, false, copy)
         }
       }
+      
       return copy
     },
 
