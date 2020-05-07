@@ -117,11 +117,11 @@ const fi = (function() {
       });
     },
 
-    flatten: function (array, shallow, copy = []) {
+    flatten: function (array, noNested, copy = []) {
       if (!Array.isArray(array)) {
         return copy.push(array)
       }
-      if (shallow) {
+      if (noNested) {
         for (let element of array)
           if (Array.isArray(element)) {
             for (let value of element) {
